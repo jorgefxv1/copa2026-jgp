@@ -954,7 +954,7 @@ nav{
 /* ── RESPONSIVO ── */
 @media(max-width:640px){
   nav{padding:0 14px}
-  .hero{padding-top:calc(var(--nav-h)+24px)}
+  .hero{padding:calc(var(--nav-h)+20px) 16px 32px}
   .hero-title{font-size:1.7rem}
   .pos-tab{padding:11px 5px;font-size:.7rem}
   .pool-grid{grid-template-columns:repeat(auto-fill,minmax(98px,1fr));gap:8px;padding:10px}
@@ -962,6 +962,29 @@ nav{
   .stats-grid{grid-template-columns:1fr}
   .convocados-panel{position:static;max-height:none}
   .titular-wrap{padding-top:calc(var(--nav-h)+16px)}
+
+  /* Seções bolão e escalação — menos espaço topo */
+  #bolao-section{padding-top:calc(var(--nav-h)+20px);padding-bottom:40px}
+  #escala-ideal-section{padding-top:calc(var(--nav-h)+20px);padding-bottom:40px}
+
+  /* Card da escalação mais compacto */
+  .escal-section-card{padding:20px 14px 18px}
+
+  /* Admin grid — colunas menores */
+  .admin-player-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}
+
+  /* Picker vira bottom sheet */
+  #picker-modal{align-items:flex-end}
+  .picker-inner{
+    width:100%;max-width:100%;
+    border-radius:16px 16px 0 0;
+    max-height:62vh;
+    animation:sheetUp .25s cubic-bezier(.32,1.2,.64,1);
+  }
+}
+@keyframes sheetUp{
+  from{transform:translateY(100%)}
+  to{transform:translateY(0)}
 }
 
 /* ── ESCALAÇÃO MAIS VOTADA ── */
